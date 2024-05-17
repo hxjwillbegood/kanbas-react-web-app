@@ -10,4 +10,3 @@ export default function KanbasNavigation() {
       <li><a id="wd-labs-link" href="#/Labs">Labs</a></li>
     </ul>
 );}
-  
