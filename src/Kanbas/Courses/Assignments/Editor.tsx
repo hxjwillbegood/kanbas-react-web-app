@@ -5,7 +5,7 @@ export default function AssignmentEditor() {
         <br/>
         <input id="wd-name" value="A1 - ENV + HTML" /><br /><br />
         <textarea id="wd-description"
-        style={{ width: "300px", height: "200px" }}
+        cols={30} rows={8}
         >
           The assignment is available online 
           Submit a link to the landing page of
@@ -142,8 +142,8 @@ export default function AssignmentEditor() {
         <table>
           <tr>
             <td>
-              <button>Cancel</button>
-              <button>Save</button>
+              <button type = "button">Cancel</button>
+              <button type ="submit">Save</button>
             </td>
           </tr>
         </table>
