@@ -47,25 +47,25 @@ tag to tell browsers to render the gaps.
         <h5>Ordered List Tag</h5>
         How to make pancakes:
         <ol id="wd-pancakes">
-        <li> Mix dry ingredients.</li>
-        <li>. Add wet ingredients.</li>
-        <li> Stir to combine.</li>
-        <li> Heat a skillet or griddle.</li>
-        <li> Pour batter onto the skillet.</li>
-        <li> Cook until bubbly on top.</li>
-        <li> Flip and cook the other side.</li>
-        <li> Serve and enjoy!</li>
+          <li> Mix dry ingredients.</li>
+          <li>. Add wet ingredients.</li>
+          <li> Stir to combine.</li>
+          <li> Heat a skillet or griddle.</li>
+          <li> Pour batter onto the skillet.</li>
+          <li> Cook until bubbly on top.</li>
+          <li> Flip and cook the other side.</li>
+          <li> Serve and enjoy!</li>
         </ol>
         My favorite recipe:
-        <ol id= "cheesecake">
-        <li> Melt creamcheese</li>
-        <li>. Add sugar in creamcheese.</li>
-        <li> Stir to combine.</li>
-        <li> Add straberry jam.</li>
-        <li> Add milk.</li>
-        <li> Pour the liquid to the circle container.</li>
-        <li> Bake with 375F for 30 mins.</li>
-        <li> Serve and enjoy!</li>
+        <ol id="wd-your-favorite-recipe">
+          <li> Melt creamcheese</li>
+          <li>. Add sugar in creamcheese.</li>
+          <li> Stir to combine.</li>
+          <li> Add straberry jam.</li>
+          <li> Add milk.</li>
+          <li> Pour the liquid to the circle container.</li>
+          <li> Bake with 375F for 30 mins.</li>
+          <li> Serve and enjoy!</li>
         </ol>
       
       <h5>Unordered List Tag</h5>
@@ -175,7 +175,7 @@ tag to tell browsers to render the gaps.
         <br />
         <img id="wd-starship"
           width="400px"
-      src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
+          src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
         />
         <br />
         Loading a local image:
@@ -225,56 +225,74 @@ tag to tell browsers to render the gaps.
 
           <input type="radio" name="radio-genre" id="wd-radio-fantasy"/>
           <label htmlFor="wd-radio-fantasy">Fantasy</label>
+
+          <h5 id="wd-checkboxes">Checkboxes</h5>
+          <label>Favorite movie genre:</label><br/>
+
+          <input type="checkbox" name="check-genre" id="wd-chkbox-comedy"/>
+          <label htmlFor="wd-chkbox-comedy">Comedy</label><br/>
+
+          <input type="checkbox" name="check-genre" id="wd-chkbox-drama"/>
+          <label htmlFor="wd-chkbox-drama">Drama</label><br/>
+
+          <input type="checkbox" name="check-genre" id="wd-chkbox-scifi"/>
+          <label htmlFor="wd-chkbox-scifi">Science Fiction</label><br/>
+
+          <input type="checkbox" name="check-genre" id="wd-chkbox-fantasy"/>
+          <label htmlFor="wd-chkbox-fantasy">Fantasy</label>
+
+
+
                     
-          <h4 id="wd-dropdowns">Dropdowns</h4>
+        <h4 id="wd-dropdowns">Dropdowns</h4>
 
-            <h5>Select one</h5>
-            <label htmlFor="wd-select-one-genre"> Favorite movie genre: </label><br/>
-            <select id="wd-select-one-genre">
-              <option value="COMEDY">Comedy</option>
-              <option value="DRAMA">Drama</option>
-              <option selected value="SCIFI">
-                  Science Fiction</option>
-              <option value="FANTASY">Fantasy</option>
-            </select>
+          <h5>Select one</h5>
+          <label htmlFor="wd-select-one-genre"> Favorite movie genre: </label><br/>
+          <select id="wd-select-one-genre">
+            <option value="COMEDY">Comedy</option>
+            <option value="DRAMA">Drama</option>
+            <option selected value="SCIFI">
+              Science Fiction</option>
+            <option value="FANTASY">Fantasy</option>
+          </select>
 
-            <h5>Select many</h5>
-            <label htmlFor="wd-select-many-genre"> Favorite movie genres: </label><br/>
-            <select id="wd-select-many-genre" multiple>
-              <option selected value="COMEDY">Comedy</option>
-              <option value="DRAMA">Drama</option>
-              <option selected value="SCIFI">
-                  Science Fiction</option>
-              <option value="FANTASY">Fantasy</option>
-            </select>  
+          <h5>Select many</h5>
+          <label htmlFor="wd-select-many-genre"> Favorite movie genres: </label><br/>
+          <select id="wd-select-many-genre" multiple>
+            <option selected value="COMEDY">Comedy</option>
+            <option value="DRAMA">Drama</option>
+            <option selected value="SCIFI">
+              Science Fiction</option>
+            <option value="FANTASY">Fantasy</option>
+          </select>  
 
-          <h4>Other HTML field types</h4>
+        <h4>Other HTML field types</h4>
 
-            <label htmlFor="wd-text-fields-email"> Email: </label>
-            <input type="email"
-                  placeholder="jdoe@somewhere.com"
-                  id="wd-text-fields-email"/><br/>
+          <label htmlFor="wd-text-fields-email"> Email: </label>
+          <input type="email"
+                placeholder="jdoe@somewhere.com"
+                id="wd-text-fields-email"/><br/>
 
-            <label htmlFor="wd-text-fields-salary-start"> Starting salary:
-            </label>
-            <input type="number"
+          <label htmlFor="wd-text-fields-salary-start"> Starting salary:
+          </label>
+          <input type="number"
                   id="wd-text-fields-salary-start"
                   placeholder="1000"
                   value="100000"/><br/>
 
-            <label htmlFor="wd-text-fields-rating"> Rating: </label>
-            <input type="range" id="wd-text-fields-rating"
+          <label htmlFor="wd-text-fields-rating"> Rating: </label>
+          <input type="range" id="wd-text-fields-rating"
                   placeholder="Doe"
                   max="5"
                   value="4"/><br/>
 
-            <label htmlFor="wd-text-fields-dob"> Date of birth: </label>
-            <input type="date"
+          <label htmlFor="wd-text-fields-dob"> Date of birth: </label>
+          <input type="date"
                   id="wd-text-fields-dob"
                   value="2000-01-21"/><br/>  
 
-            <h4>Anchor tag</h4>
-              Please <a id="wd-lipsum" href="https://www.lipsum.com">click here</a> to get dummy text<br/>   
+          <h4>Anchor tag</h4>
+            Please <a id="wd-lipsum" href="https://www.lipsum.com">click here</a> to get dummy text<br/>   
 
         </form>
 
