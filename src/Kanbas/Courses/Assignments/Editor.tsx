@@ -139,7 +139,7 @@ export default function AssignmentEditor() {
 
         <hr></hr>
 
-        <table>
+        <table width = "100%">
           <tr>
             <td>
               <button type = "button">Cancel</button>
