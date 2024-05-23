@@ -48,7 +48,7 @@ tag to tell browsers to render the gaps.
         How to make pancakes:
         <ol id="wd-pancakes">
           <li> Mix dry ingredients.</li>
-          <li>. Add wet ingredients.</li>
+          <li> Add wet ingredients.</li>
           <li> Stir to combine.</li>
           <li> Heat a skillet or griddle.</li>
           <li> Pour batter onto the skillet.</li>

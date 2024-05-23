@@ -29,7 +29,7 @@ export default function AssignmentEditor() {
 
           <tr>
             <td align="right" valign="top" >
-              <label htmlFor="wd-group">Assgnment Group</label>
+              <label htmlFor="wd-group">Assignment Group</label>
             </td>
             <td>
               <select><option>ASSIGNMENTS</option></select>
@@ -93,10 +93,10 @@ export default function AssignmentEditor() {
           Assign
           <td >
             <tr>
-            <label htmlFor="wd-assign-to" >Assign to</label>
+              <label htmlFor="wd-assign-to" >Assign to</label>
             </tr>
             <tr>
-            <input id="wd-assign-to" value={"Everyone"} />
+              <input id="wd-assign-to" value="Everyone" />
             </tr>
             <br/>
 

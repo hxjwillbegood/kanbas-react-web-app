@@ -5,8 +5,14 @@ import Lab2 from "./Lab2";
 import Lab3 from "./Lab3";
 export default function Labs() {
   return (
+    
     <div>
       <h1>Labs</h1>
+      <h2>
+        <p>Xuejing Huang</p>
+        <p>Section: 2024 Summer Full </p>
+      </h2>
+      
       <TOC />
       <Routes>
         <Route path="/" element={<Navigate to="Lab1" />} />

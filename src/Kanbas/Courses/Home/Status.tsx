@@ -5,9 +5,9 @@ export default function CourseStatus() {
         <button>Unpublish</button> <button>Publish</button>
         <br/>
         <br/>
-        <button>Importing Existing Content</button>
+        <button>Import Existing Content</button>
         <br/>
-        <button>Importing from Commons</button>
+        <button>Import from Commons</button>
         <br/>
         <button>Choose Home Page</button>
         <br/>

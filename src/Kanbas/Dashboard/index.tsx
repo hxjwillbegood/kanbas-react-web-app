@@ -19,7 +19,7 @@ export default function Dashboard() {
         </div>
 
         <div className="wd-dashboard-course"> 
-          <img src="/images/reactjs.jpg" width={200} />
+          <img src="/images/Data.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link"
               href="#/Kanbas/Courses/1234/Home">
@@ -33,7 +33,7 @@ export default function Dashboard() {
         </div>
 
         <div className="wd-dashboard-course"> 
-          <img src="/images/reactjs.jpg" width={200} />
+          <img src="/images/solid.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link"
               href="#/Kanbas/Courses/1234/Home">
@@ -47,7 +47,7 @@ export default function Dashboard() {
         </div>
         
         <div className="wd-dashboard-course"> 
-          <img src="/images/reactjs.jpg" width={200} />
+          <img src="/images/3.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link"
               href="#/Kanbas/Courses/1234/Home">
@@ -61,7 +61,7 @@ export default function Dashboard() {
         </div>
 
         <div className="wd-dashboard-course"> 
-          <img src="/images/reactjs.jpg" width={200} />
+          <img src="/images/4.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link"
               href="#/Kanbas/Courses/1234/Home">
@@ -75,7 +75,7 @@ export default function Dashboard() {
         </div>
 
         <div className="wd-dashboard-course"> 
-          <img src="/images/reactjs.jpg" width={200} />
+          <img src="/images/2.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link"
               href="#/Kanbas/Courses/1234/Home">
@@ -89,7 +89,7 @@ export default function Dashboard() {
         </div>
 
         <div className="wd-dashboard-course"> 
-          <img src="/images/reactjs.jpg" width={200} />
+          <img src="/images/web.jpg" width={200} />
           <div>
             <a className="wd-dashboard-course-link"
               href="#/Kanbas/Courses/1234/Home">
