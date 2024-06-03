@@ -3,6 +3,7 @@ import { Route, Routes, Navigate } from "react-router";
 import TOC from "./TOC";
 import Lab2 from "./Lab2";
 import Lab3 from "./Lab3";
+import ReactIconsSampler from "./Lab2/ReactIconsSampler";
 export default function Labs() {
   return (
     
@@ -12,7 +13,7 @@ export default function Labs() {
         <p>Xuejing Huang</p>
         <p>Section: 2024 Summer Full </p>
       </h2>
-      
+      <ReactIconsSampler /> 
       <TOC />
       <Routes>
         <Route path="/" element={<Navigate to="Lab1" />} />
