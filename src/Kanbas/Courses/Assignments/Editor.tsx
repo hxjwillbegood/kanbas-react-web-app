@@ -100,7 +100,7 @@ export default function AssignmentEditor() {
               <div className="row mb-3">
                 <div className="col-sm-10 offset-sm">
                   <div className="form-check">
-                    <input className="form-check-input" type="checkbox" />
+                    <input className="form-check-input" type="checkbox" checked/>
                     <label className="form-check-label" htmlFor="r6">
                     Website URL 
                     </label> 

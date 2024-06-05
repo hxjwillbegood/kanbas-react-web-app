@@ -1,6 +1,8 @@
 import { GradesControlButtons } from "./GradesControlButtons";
 import {HiMagnifyingGlass} from "react-icons/hi2";
 import {FiFilter} from "react-icons/fi";
+import "./index.css";
+
 
 export default function Grades() {
     return (
@@ -53,47 +55,49 @@ export default function Grades() {
                     </button>
                 </div>
             </div>
-
-            <div className="col-12">
-                    <div className="table-responsive">
-                        <table className="table table-bordered">
+            
+            <div id="wd-css-responsive-tables" className="table-responsive">
+                <table className="table table-striped table-bordered" >
                     <thead>
-                        <tr className="table">
-                            <th>Srudent Name</th>
-                            <th>A1 SETUP Out of 100%</th>
-                            <th>A2 HTML Out of 100%</th>
-                            <th>A3 CSS Out of 100%</th>
-                            <th>A4 Bootstrap Out of 100%</th>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>A1 SETUP <br/> Out of 100%</th>
+                            <th>A2 HTML <br/> Out of 100%</th>
+                            <th>A3 CSS <br/> Out of 100%</th>
+                            <th>A4 Bootstrap <br/> Out of 100%</th>
                         </tr>
+
                     </thead>
 
                     <tbody>
-                    <tr className="table">
-                        <td>Eva H</td>
-                        <td>100%</td>
-                        <td>95%</td>
-                        <td>85%</td>
-                        <td>85%</td>
-                    </tr>
-                    <tr className="table">
-                        <td>Kate H</td>
-                        <td>80%</td>
-                        <td>95%</td>
-                        <td>85%</td>
-                        <td>85%</td>
-                    </tr>
-                    <tr className="table">
-                        <td>Selina H</td>
-                        <td>75%</td>
-                        <td>95%</td>
-                        <td>100%</td>
-                        <td>85%</td>
-                    </tr>
+                        <tr>
+                            <td className="text-danger">Jane Adams</td>
+                            <td>100%</td>
+                            <td><input className="form-control" placeholder="96.95%"/></td>
+                            <td>92.18%</td>
+                            <td>66.22%</td>
+                        </tr>
+                        <tr >
+                            <td className="text-danger">Mahi Sai Srinivas Bobbili</td>
+                            <td>100%</td>
+                            <td>96.67%</td>
+                            <td>98.37%</td>
+                            <td>98.99%</td>
+                        </tr>
+
+                        <tr>
+                            <td className="text-danger">Selina H</td>
+                            <td>75%</td>
+                            <td>95%</td>
+                            <td>100%</td>
+                            <td>85%</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
-            </div>
 
         </div>
+
+      
     );
 }

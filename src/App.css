@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 576px) {
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table tbody td input {
+    width: 100%;
+  }
+}
