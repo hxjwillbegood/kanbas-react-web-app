@@ -29,7 +29,6 @@ export default function AssignmentEditor() {
         </div>
       </div>
         
-        
         <div className={"row float-end"}>
 
           <div className="row mb-3 justify-content-end">

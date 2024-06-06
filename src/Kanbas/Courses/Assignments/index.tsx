@@ -25,13 +25,15 @@ export default function Assignments() {
               <BsPencilSquare className="me-3" />  
               <span className="d-inline-block">
                 <a className="wd-assignment-list-item fw-bold"
-                    href="#/Kanbas/Courses/1234/Assignments/123">
+                    href="#/Kanbas/Courses/1234/Assignments/123" >
                     A1
                 </a>
-                <div style={{marginLeft: '0'}}>
+                <div style={{marginLeft: '0', fontSize: '0.8em'}}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <div style={{ color: 'red' }}>Multiple Modules</div>
-                    <div style={{ marginLeft: '10px' }}> | Not available until May 6 at 12:00am |</div>
+                      <div style={{ color: 'red' }}>
+                        <strong>Multiple Modules</strong>
+                      </div>
+                    <div style={{ marginLeft: '10px' }}> | <strong>Not available until</strong> May 6 at 12:00am |</div>
                   </div>
                   <div>Due May 20 at 11:59pm | 100 pts</div>
                 </div>
@@ -54,10 +56,12 @@ export default function Assignments() {
                     href="#/Kanbas/Courses/1234/Assignments/123">
                     A2
                 </a>
-                <div style={{marginLeft: '0'}}>
+                <div style={{marginLeft: '0', fontSize: '0.8em'}}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <div style={{ color: 'red' }}>Multiple Modules</div>
-                    <div style={{ marginLeft: '10px' }}> | Not available until May 6 at 12:00am |</div>
+                    <div style={{ color: 'red' }}>
+                      <strong>Multiple Modules</strong>
+                    </div>
+                    <div style={{ marginLeft: '10px' }}> | <strong>Not available until</strong>  May 13 at 12:00am |</div>
                   </div>
                   <div>Due May 27 at 11:59pm | 100 pts</div>
                 </div>
@@ -79,10 +83,12 @@ export default function Assignments() {
                     href="#/Kanbas/Courses/1234/Assignments/123">
                     A3
                 </a>
-                <div style={{ marginLeft: '0' }}>
+                <div style={{ marginLeft: '0',fontSize: '0.8em' }}>
                   <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <div style={{ color: 'red' }}>Multiple Modules</div>
-                    <div style={{ marginLeft: '10px' }}> | Not available until May 6 at 12:00am |</div>
+                    <div style={{ color: 'red' }}>
+                      <strong>Multiple Modules</strong>
+                    </div>
+                    <div style={{ marginLeft: '10px' }}> | <strong>Not available until</strong> May 20 at 12:00am |</div>
                   </div>
                   <div>Due May 13 at 11:59pm | 100 pts</div>
                 </div>
@@ -97,7 +103,11 @@ export default function Assignments() {
 
         </li>   
       </ul>
+
+      
     
     </div>
+
+    
 );}
   
