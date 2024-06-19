@@ -29,7 +29,7 @@ export default function Assignments() {
                   <BsGripVertical className="me-2 fs-3" />
                   <BsPencilSquare className="me-3" />
                   <span className="d-inline-block">
-                    <a className="wd-assignment-list-item fw-bold" href={`#/Kanbas/Courses/${cid}/Assignments/${assignment.assignment_name}`}>
+                    <a className="wd-assignment-list-item fw-bold" href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}>
                       {assignment.assignment_name}
                     </a>
                     <div style={{ marginLeft: '0', fontSize: '0.8em' }}>

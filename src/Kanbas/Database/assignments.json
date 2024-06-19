@@ -2,52 +2,9 @@
 [
 {
     "course": "RS101",
+    "_id": "A101",
     "assignment_id": "A1",
-    "assignment_name":"A1",
-    "module_type": "Multiple Modules",
-    "not_available": "Not available until",
-    "not_available_date": "May 6 at 12:00am",
-    "due": "Due",
-    "due_date": "May 13 at 11:59pm",
-    "points": "100pts",
-    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page.",
-    "point": "100",
-    "assignmentGroup": "ASSIGNMENTS",
-    "gradeDisplay": "Percentage",
-    "submissionType": "Online",
-
-    "submissions": [
-    {
-    "type": "TextEntry",
-    "checked": "undefined"
-    },
-    {
-    "type": "Website URL",
-    "checked": "checked"
-    },
-    {
-    "type": "Media Recordings",
-    "checked": "undefined"
-    },
-    {
-    "type": "Student Annotation",
-    "checked": "undefined"
-    },
-    {
-    "type": "File Uploads",
-    "checked": "undefined"
-    }
-    ],
-
-    "assign":"everyone",
-    "due_date_":"2024-05-20",
-    "available_from":"2024-05-06",
-    "available_until":"2024-05-20"
-},
-{
-    "course": "RS101",
-    "assignment_id": "A2",
-    "assignment_name":"A2",
+    "assignment_name":"Propulsion Assignment",
     "module_type": "Multiple Modules",
     "not_available": "Not available until",
     "not_available_date": "May 6 at 12:00am",
@@ -91,98 +48,147 @@
 
 {
     "course": "RS101",
-    "assignment_id": "A3",
-    "assignment_name":"A3",
-    "module_type": "Multiple Modules",
-    "not_available": "Not available until",
-    "not_available_date": "May 6 at 12:00am",
-    "due": "Due",
-    "due_date": "May 13 at 11:59pm",
-    "points": "100pts",
-    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page.",
-    "point": "100",
-    "assignmentGroup": "ASSIGNMENTS",
-    "gradeDisplay": "Percentage",
-    "submissionType": "Online",
-
-    "submissions": [
-    {
-    "type": "TextEntry",
-    "checked": "undefined"
-    },
-    {
-    "type": "Website URL",
-    "checked": "checked"
-    },
-    {
-    "type": "Media Recordings",
-    "checked": "undefined"
-    },
-    {
-    "type": "Student Annotation",
-    "checked": "undefined"
-    },
-    {
-    "type": "File Uploads",
-    "checked": "undefined"
-    }
-    ],
-
-    "assign":"everyone",
-    "due_date_":"2024-05-20",
-    "available_from":"2024-05-06",
-    "available_until":"2024-05-20"
-},
-
-
-{
-    "course": "RS102",
-    "assignment_id": "A1",
-    "assignment_name":"A1",
-    "module_type": "Multiple Modules",
-    "not_available": "Not available until",
-    "not_available_date": "May 6 at 12:00am",
-    "due": "Due",
-    "due_date": "May 13 at 11:59pm",
-    "points": "100pts",
-    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page.",
-    "point": "100",
-    "assignmentGroup": "ASSIGNMENTS",
-    "gradeDisplay": "Percentage",
-    "submissionType": "Online",
-
-    "submissions": [
-    {
-    "type": "TextEntry",
-    "checked": "undefined"
-    },
-    {
-    "type": "Website URL",
-    "checked": "checked"
-    },
-    {
-    "type": "Media Recordings",
-    "checked": "undefined"
-    },
-    {
-    "type": "Student Annotation",
-    "checked": "undefined"
-    },
-    {
-    "type": "File Uploads",
-    "checked": "undefined"
-    }
-    ],
-
-    "assign":"everyone",
-    "due_date_":"2024-05-20",
-    "available_from":"2024-05-06",
-    "available_until":"2024-05-20"
-},
-{
-    "course": "RS102",
+    "_id": "A102",
     "assignment_id": "A2",
-    "assignment_name":"A2",
+    "assignment_name":"Combustion Analysis",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page.",
+    "point": "100",
+    "assignmentGroup": "ASSIGNMENTS",
+    "gradeDisplay": "Percentage",
+    "submissionType": "Online",
+
+    "submissions": [
+    {
+    "type": "TextEntry",
+    "checked": "undefined"
+    },
+    {
+    "type": "Website URL",
+    "checked": "checked"
+    },
+    {
+    "type": "Media Recordings",
+    "checked": "undefined"
+    },
+    {
+    "type": "Student Annotation",
+    "checked": "undefined"
+    },
+    {
+    "type": "File Uploads",
+    "checked": "undefined"
+    }
+    ],
+
+    "assign":"everyone",
+    "due_date_":"2024-05-20",
+    "available_from":"2024-05-06",
+    "available_until":"2024-05-20"
+},
+
+{
+    "course": "RS101",
+    "_id": "A103",
+    "assignment_id": "A3",
+    "assignment_name":"Nozzle Design Project",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page.",
+    "point": "100",
+    "assignmentGroup": "ASSIGNMENTS",
+    "gradeDisplay": "Percentage",
+    "submissionType": "Online",
+
+    "submissions": [
+    {
+    "type": "TextEntry",
+    "checked": "undefined"
+    },
+    {
+    "type": "Website URL",
+    "checked": "checked"
+    },
+    {
+    "type": "Media Recordings",
+    "checked": "undefined"
+    },
+    {
+    "type": "Student Annotation",
+    "checked": "undefined"
+    },
+    {
+    "type": "File Uploads",
+    "checked": "undefined"
+    }
+    ],
+
+    "assign":"everyone",
+    "due_date_":"2024-05-20",
+    "available_from":"2024-05-06",
+    "available_until":"2024-05-20"
+},
+
+
+{
+    "course": "RS102",
+    "_id": "A201",
+    "assignment_id": "A1",
+    "assignment_name":"Aerodynamics Quiz",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page.",
+    "point": "100",
+    "assignmentGroup": "ASSIGNMENTS",
+    "gradeDisplay": "Percentage",
+    "submissionType": "Online",
+
+    "submissions": [
+    {
+    "type": "TextEntry",
+    "checked": "undefined"
+    },
+    {
+    "type": "Website URL",
+    "checked": "checked"
+    },
+    {
+    "type": "Media Recordings",
+    "checked": "undefined"
+    },
+    {
+    "type": "Student Annotation",
+    "checked": "undefined"
+    },
+    {
+    "type": "File Uploads",
+    "checked": "undefined"
+    }
+    ],
+
+    "assign":"everyone",
+    "due_date_":"2024-05-20",
+    "available_from":"2024-05-06",
+    "available_until":"2024-05-20"
+},
+{
+    "course": "RS102",
+    "_id": "A202",
+    "assignment_id": "A2",
+    "assignment_name":"Flow Analysis",
     "module_type": "Multiple Modules",
     "not_available": "Not available until",
     "not_available_date": "May 6 at 12:00am",
@@ -226,8 +232,9 @@
 
 {
     "course": "RS102",
+    "_id": "A203",
     "assignment_id": "A3",
-    "assignment_name":"A3",
+    "assignment_name":"Heating Analysis",
     "module_type": "Multiple Modules",
     "not_available": "Not available until",
     "not_available_date": "May 6 at 12:00am",
@@ -273,8 +280,9 @@
 
 {
     "course": "RS103",
+    "_id": "A301",
     "assignment_id": "A1",
-    "assignment_name":"A1",
+    "assignment_name":"Structural Design Task",
     "module_type": "Multiple Modules",
     "not_available": "Not available until",
     "not_available_date": "May 6 at 12:00am",
@@ -317,8 +325,9 @@
 },
 {
     "course": "RS103",
+    "_id": "A302",
     "assignment_id": "A2",
-    "assignment_name":"A2",
+    "assignment_name":"Orbital Calculations",
     "module_type": "Multiple Modules",
     "not_available": "Not available until",
     "not_available_date": "May 6 at 12:00am",
@@ -333,7 +342,7 @@
 
     "submissions": [
     {
-    "type": "TextEntry",
+    "type": "Text Entry",
     "checked": "undefined"
     },
     {
@@ -362,8 +371,9 @@
 
 {
     "course": "RS103",
+    "_id": "A303",
     "assignment_id": "A3",
-    "assignment_name":"A3",
+    "assignment_name":"Systems Engineering Exam",
     "module_type": "Multiple Modules",
     "not_available": "Not available until",
     "not_available_date": "May 6 at 12:00am",

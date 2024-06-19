@@ -3,10 +3,10 @@ import * as db from "../../Database";
 import { useParams, Link } from "react-router-dom";
 
 
-export default function AssignmentEditor() {
+export default function Editor() {
   const { cid, asmt } = useParams();
   const assignment = db.assignments.find(
-    (assignment) => assignment.course === cid && assignment.assignment_id === asmt
+    (assignment) => assignment.course === cid && assignment._id === asmt
   );
 
   if (!assignment) {
