@@ -7,7 +7,7 @@ import * as db from "../../Database";
 import { useParams } from "react-router";
 
 export default function Assignments() {
-  const { cid } = useParams();
+  const { cid, asmt } = useParams();
   const assignments = db.assignments;
 
   return (

@@ -1,15 +1,19 @@
+import { MdOutlineCalendarMonth } from "react-icons/md";
 import * as db from "../../Database";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+
 
 export default function AssignmentEditor() {
   const { cid, asmt } = useParams();
-  const assignment = db.assignments.find((assignment) => assignment._id === asmt);
-
-
+  const assignment = db.assignments.find(
+    (assignment) => assignment.course === cid && assignment.assignment_id === asmt
+  );
 
   if (!assignment) {
     return <div>No assignment found for this course.</div>;
   }
+
+  const submissionsType = assignment.submissions;
 
   return (
     <div className="wd-assignments-editor">
@@ -34,13 +38,15 @@ export default function AssignmentEditor() {
               className="form-control"
               id="wd-description"
               rows={15}
-              defaultValue={assignment.assignment_description}
-            />
+              readOnly
+            >
+              {assignment.assignment_description}
+            </textarea>
           </div>
         </div>
       </div>
 
-      <div className="row float-end">
+      <div className={"row float-end"}>
         <div className="row mb-3 justify-content-end">
           <div className="col text-end">
             <label htmlFor="wd-points" className="col-form-label">
@@ -52,7 +58,7 @@ export default function AssignmentEditor() {
               type="number"
               className="form-control"
               id="wd-points"
-              value={assignment.points}
+              value={assignment.point}
               readOnly
             />
           </div>
@@ -65,28 +71,28 @@ export default function AssignmentEditor() {
             </label>
           </div>
           <div className="row mb-3 col offset-sm">
-            <select id="wd-group" className="form-select" defaultValue="ASSIGNMENTS">
-              <option>ASSIGNMENTS</option>
+            <select id="wd-group" className="form-select" >
+              <option>{assignment.assignmentGroup}</option>
             </select>
           </div>
         </div>
 
         <div className="row mb-3 justify-content-end">
           <div className="col text-end mb-3">
-            <label htmlFor="wd-grade-display" className="col-form-label">
+            <label htmlFor="wd-group" className="col-form-label">
               Display Grade as
             </label>
           </div>
           <div className="row mb-3 col offset-sm">
-            <select id="wd-grade-display" className="form-select" defaultValue="Percentage">
-              <option>Percentage</option>
+            <select id="wd-group" className="form-select" >
+              <option>{assignment.gradeDisplay}</option>
             </select>
           </div>
         </div>
 
         <div className="row mb-3 justify-content-end">
           <div className="col text-end mb-3">
-            <label htmlFor="wd-submission-type" className="col-form-label">
+            <label htmlFor="wd-group" className="col-form-label">
               Submission Type
             </label>
           </div>
@@ -94,85 +100,53 @@ export default function AssignmentEditor() {
           <div className="card col mb-3">
             <div className="card-body">
               <div className="row mb-3 col offset-sm">
-                <select id="wd-submission-type" className="form-select" defaultValue="Online">
-                  <option>Online</option>
+                <select id="wd-group" className="form-select" >
+                  <option>{assignment.submissionType}</option>
                 </select>
               </div>
 
-              <div className="row mb-3">
-                <div className="col-sm-10 offset-sm">
-                  <div className="form-check">
-                    <input className="form-check-input" type="checkbox" id="text-entry" />
-                    <label className="form-check-label" htmlFor="text-entry">
-                      Text Entry
-                    </label>
+              {submissionsType && submissionsType.map((submission) => (
+                <div className="row mb-3">
+                  <div className="col-sm-10 offset-sm">
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        checked={submission.checked === "checked"}
+                        readOnly
+                      />
+                      <label className="form-check-label">
+                      {/* <label className="form-check-label" htmlFor={`submission-${index}`}> */}
+                        {submission.type}
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="row mb-3">
-                <div className="col-sm-10 offset-sm">
-                  <div className="form-check">
-                    <input className="form-check-input" type="checkbox" id="website-url" checked />
-                    <label className="form-check-label" htmlFor="website-url">
-                      Website URL
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row mb-3">
-                <div className="col-sm-10 offset-sm">
-                  <div className="form-check">
-                    <input className="form-check-input" type="checkbox" id="media-recordings" />
-                    <label className="form-check-label" htmlFor="media-recordings">
-                      Media Recordings
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row mb-3">
-                <div className="col-sm-10 offset-sm">
-                  <div className="form-check">
-                    <input className="form-check-input" type="checkbox" id="student-annotation" />
-                    <label className="form-check-label" htmlFor="student-annotation">
-                      Student Annotation
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row mb-3">
-                <div className="col-sm-10 offset-sm">
-                  <div className="form-check">
-                    <input className="form-check-input" type="checkbox" id="file-uploads" />
-                    <label className="form-check-label" htmlFor="file-uploads">
-                      File Uploads
-                    </label>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
 
         <div className="row justify-content-end mb-5">
           <div className="col text-end">
-            <label htmlFor="wd-assign-to" className="col-form-label">
+            <label htmlFor="wd-group" className="col-sm-2 col-form-label">
               Assign
             </label>
           </div>
           <div className="card col">
             <div className="card-body mb-3">
-              <label className="col-form-label">Assign to</label>
+              <label className="col-sm-2 col-form-label">Assign to</label>
+
               <div className="col mb-3">
-                <input id="wd-assign-to" className="form-control" defaultValue="everyone" />
+                <input id="wd-assign-to" className="form-control" value={assignment.assign} />
               </div>
+
               <label className="form-label">Due</label>
+
               <div className="mb-3">
-                <input type="date" className="form-control" defaultValue="2024-05-06" />
+                <input type="date" className="form-control" value={assignment.due_date_} />
               </div>
+
               <div className="row">
                 <div className="col">
                   <label htmlFor="wd-available-from">Available from</label>
@@ -181,24 +155,35 @@ export default function AssignmentEditor() {
                   <label htmlFor="wd-available-until">Until</label>
                 </div>
               </div>
+
               <div className="row">
                 <div className="col">
-                  <input type="date" className="form-control" defaultValue="2024-05-06" />
+                  <input
+                    type="date"
+                    className="form-control"
+                    value={assignment.available_from}
+                    readOnly
+                  />
                 </div>
                 <div className="col">
-                  <input type="date" className="form-control" defaultValue="2024-05-20" />
+                  <input
+                    type="date"
+                    className="form-control"
+                    value={assignment.available_until}
+                    readOnly
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <hr />
+        <hr></hr>
         <div>
           <div className="col float-end">
-            <button type="button" className="btn btn-lg btn-secondary me-2">
+            <Link to={`/Kanbas/Courses/${cid}/Assignments`} className="btn btn-lg btn-secondary me-2">
               Cancel
-            </button>
+            </Link>
             <button type="submit" className="btn btn-lg btn-danger">
               Save
             </button>
