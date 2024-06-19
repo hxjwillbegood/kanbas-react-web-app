@@ -1,0 +1,708 @@
+[
+{
+    "course": "RS101",
+    "_id": "A1",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+},
+{
+    "course": "RS101",
+    "_id": "A2",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+},
+{
+    "course": "RS101",
+    "_id": "A3",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+
+
+
+{
+    "course": "RS102",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+{
+    "course": "RS102",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+{
+    "course": "RS102",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+
+
+
+{
+    "course": "RS103",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+{
+    "course": "RS103",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+{
+    "course": "RS103",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+
+
+
+{
+    "course": "RS104",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+{
+    "course": "RS104",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+{
+    "course": "RS104",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+
+{
+    "course": "RS105",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+{
+    "course": "RS105",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+{
+    "course": "RS105",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts",
+    "assignment_description": "This assignment is available online. Submit a link to the landing page of your web application runnng on Netlify. The landing page should include the following: Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories.The Kanbas application should include a link to nevigate back to the landing page."
+
+},
+
+
+{
+    "course": "RS106",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS106",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS106",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+{
+    "course": "RS107",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS107",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS107",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+{
+    "course": "RS108",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS108",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS108",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+
+{
+    "course": "RS109",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS109",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS109",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+
+{
+    "course": "RS110",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS110",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS110",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+
+{
+    "course": "RS111",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS111",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS111",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+{
+    "course": "RS112",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS112",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS112",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+{
+    "course": "RS113",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS113",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS113",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+{
+    "course": "RS114",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS114",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS114",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+{
+    "course": "RS115",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS115",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS115",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+{
+    "course": "RS116",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS116",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS116",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+{
+    "course": "RS117",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS117",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS117",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+{
+    "course": "RS118",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS118",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS118",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+{
+    "course": "RS119",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS119",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS119",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+{
+    "course": "RS120",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS120",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS120",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+},
+
+
+{
+    "course": "RS121",
+    "assignment_name":"A1",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 6 at 12:00am",
+    "due": "Due",
+    "due_date": "May 13 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS121",
+    "assignment_name":"A2",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 13 at 12:00am",
+    "due": "Due",
+    "due_date": "May 20 at 11:59pm",
+    "points": "100pts"
+},
+{
+    "course": "RS121",
+    "assignment_name":"A3",
+    "module_type": "Multiple Modules",
+    "not_available": "Not available until",
+    "not_available_date": "May 20 at 12:00am",
+    "due": "Due",
+    "due_date": "May 27 at 11:59pm",
+    "points": "100pts"
+}
+
+]

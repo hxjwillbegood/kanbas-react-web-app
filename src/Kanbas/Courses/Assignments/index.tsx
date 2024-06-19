@@ -1,113 +1,57 @@
 import AssignmentControl from "./AssignmentControl";
-import { BsGripVertical } from "react-icons/bs";
+import { BsGripVertical, BsPencilSquare } from "react-icons/bs";
 import { GoTriangleDown } from "react-icons/go";
 import { AssignmentsControlButtons } from "./AssignmentsControlButtons";
 import LessonControlButtons from "../Modules/LessonControlButtons"; 
-import { BsPencilSquare } from "react-icons/bs";
+import * as db from "../../Database";
+import { useParams } from "react-router";
 
 export default function Assignments() {
-  return (
-    <div id="wd-assignments" >
+  const { cid } = useParams();
+  const assignments = db.assignments;
 
-      <AssignmentControl/><br /><br />
+  return (
+    <div id="wd-assignments">
+      <AssignmentControl /><br /><br />
       <ul id="wd-modules" className="list-group rounded-0">
         <li className="wd-module list-group-item p-0 mb-5 fs-5 border-gray">
           <div className="wd-title p-3 ps-2 bg-secondary" style={{ display: "flex" }}>
             <BsGripVertical className="me-2 fs-3" />
-            <GoTriangleDown className="me-2 fs-3"/>
+            <GoTriangleDown className="me-2 fs-3" />
             ASSIGNMENTS
-            <AssignmentsControlButtons />  
-          </div >
-
-          <li className="wd-lesson list-group-item p-3 ps-1" style={{borderLeft: '4px solid green'}}>
-            <div className="d-flex align-items-center flex-grow-1">
-              <BsGripVertical className="me-2 fs-3" />
-              <BsPencilSquare className="me-3" />  
-              <span className="d-inline-block">
-                <a className="wd-assignment-list-item fw-bold"
-                    href="#/Kanbas/Courses/1234/Assignments/123" >
-                    A1
-                </a>
-                <div style={{marginLeft: '0', fontSize: '0.8em'}}>
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                      <div style={{ color: 'red' }}>
-                        <strong>Multiple Modules</strong>
+            <AssignmentsControlButtons />
+          </div>
+          {assignments
+            .filter((assignment) => assignment.course === cid)
+            .map((assignment) => (
+              <li key={assignment.assignment_name} className="wd-lesson list-group-item p-3 ps-1" style={{ borderLeft: '4px solid green' }}>
+                <div className="d-flex align-items-center flex-grow-1">
+                  <BsGripVertical className="me-2 fs-3" />
+                  <BsPencilSquare className="me-3" />
+                  <span className="d-inline-block">
+                    <a className="wd-assignment-list-item fw-bold" href={`#/Kanbas/Courses/${cid}/Assignments/${assignment.assignment_name}`}>
+                      {assignment.assignment_name}
+                    </a>
+                    <div style={{ marginLeft: '0', fontSize: '0.8em' }}>
+                      <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <div style={{ color: 'red' }}>
+                          <strong>{assignment.module_type}</strong>
+                        </div>
+                        <div style={{ marginLeft: '10px' }}>
+                          | <strong>{assignment.not_available}</strong> {assignment.not_available_date} |
+                        </div>
                       </div>
-                    <div style={{ marginLeft: '10px' }}> | <strong>Not available until</strong> May 6 at 12:00am |</div>
-                  </div>
-                  <div>Due May 20 at 11:59pm | 100 pts</div>
-                </div>
-              </span>
-
-              <div style={{marginLeft: "auto"}}>
-                <LessonControlButtons />
-              </div>
-
-            </div>
-
-          </li>
-
-          <li className="wd-lesson list-group-item p-3 ps-1" style={{borderLeft: '4px solid green'}}>
-            <div className="d-flex align-items-center flex-grow-1">
-              <BsGripVertical className="me-2 fs-3" />
-              <BsPencilSquare className="me-3" />  
-              <span className="d-inline-block">
-                <a className="wd-assignment-list-item fw-bold"
-                    href="#/Kanbas/Courses/1234/Assignments/123">
-                    A2
-                </a>
-                <div style={{marginLeft: '0', fontSize: '0.8em'}}>
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <div style={{ color: 'red' }}>
-                      <strong>Multiple Modules</strong>
+                      <div>{assignment.due} {assignment.due_date} | {assignment.points}</div>
                     </div>
-                    <div style={{ marginLeft: '10px' }}> | <strong>Not available until</strong>  May 13 at 12:00am |</div>
+                  </span>
+                  <div style={{ marginLeft: "auto" }}>
+                    <LessonControlButtons />
                   </div>
-                  <div>Due May 27 at 11:59pm | 100 pts</div>
                 </div>
-              </span>
-
-              <div style={{marginLeft: "auto"}}>
-                <LessonControlButtons />
-              </div>
-
-            </div>
-          </li>
-
-          <li className="wd-lesson list-group-item p-3 ps-1" style={{borderLeft: '4px solid green'}}>
-            <div className="d-flex align-items-center flex-grow-1">
-              <BsGripVertical className="me-2 fs-3" />
-              <BsPencilSquare className="me-3" />  
-              <span className="d-inline-block">
-                <a className="wd-assignment-list-item fw-bold"
-                    href="#/Kanbas/Courses/1234/Assignments/123">
-                    A3
-                </a>
-                <div style={{ marginLeft: '0',fontSize: '0.8em' }}>
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <div style={{ color: 'red' }}>
-                      <strong>Multiple Modules</strong>
-                    </div>
-                    <div style={{ marginLeft: '10px' }}> | <strong>Not available until</strong> May 20 at 12:00am |</div>
-                  </div>
-                  <div>Due May 13 at 11:59pm | 100 pts</div>
-                </div>
-              </span>
-
-              <div style={{marginLeft: "auto"}}>
-                <LessonControlButtons />
-              </div>
-
-            </div>
-          </li>
-
-        </li>   
+              </li>
+            ))}
+        </li>
       </ul>
-
-      
-    
     </div>
-
-    
-);}
-  
+  );
+}
