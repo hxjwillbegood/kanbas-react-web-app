@@ -7,24 +7,44 @@ import { useParams } from "react-router-dom";
 import users from "../../Database/users.json";
 import enrollments from "../../Database/enrollments.json";
 import grades from "../../Database/grades.json";
+import assignments from "../../Database/assignments.json";
 
 export default function Grades() {
   const { cid } = useParams();
 
-  // Filter enrollments by the selected course,
-  // filter this first since this is the key to three sets of data
-  const enrolledUsers = enrollments
-    .filter(enrollment => enrollment.course === cid)
-    .map(enrollment => enrollment.user);
+  // Filter enrollments by the selected course
+  const enrolledUsers = enrollments.filter(enrollment => enrollment.course === cid);
+  const enrolledUserIDs = enrolledUsers.map(enrollment => enrollment.user);
 
-  // Get the user details for the enrolled users
-  const enrolledUserDetails = users.filter(user => enrolledUsers.includes(user._id));
+  // Filter assignments by the selected course
+  const assignmentList = assignments.filter(assignment => assignment.course === cid);
+  const assignmentNames = assignmentList.map(assignment => assignment._id);
 
-  // Get grades for the enrolled students and the selected course
-  const courseGrades = grades.filter(grade => enrolledUsers.includes(grade.student));
+  let students = [];
+  for (let i = 0; i < enrolledUserIDs.length; i++) {
+    const student = users.find(user => user._id === enrolledUserIDs[i]);
 
-  // Extract unique assignments from the course grades data
-  const assignments = Array.from(new Set(courseGrades.map(grade => grade.assignment)));
+    if (student) {
+      const fullName = `${student.firstName} ${student.lastName}`;
+
+      // Filter grades for each student and each assignment
+      const studentGrades = assignmentList.map(assignment => {
+        const gradeData = grades.find(grade => grade.student === enrolledUserIDs[i] && grade.assignment === assignment._id);
+        return {
+          assignmentName: assignment._id,
+          grade: gradeData ? gradeData.grade : '-' // Default to '-' if no grade data is found
+        };
+      });
+
+      const studentData = {
+        studentID: enrolledUserIDs[i],
+        studentName: fullName,
+        studentGrades: studentGrades // Assuming studentGrades contains grade objects
+      };
+      
+      students.push(studentData);
+    }
+  }
 
   return (
     <div>
@@ -47,7 +67,6 @@ export default function Grades() {
         <div className="col offset-sm">
           <span className="mb-3 col offset-sm input-group-text">
             <HiMagnifyingGlass className="me-1" />
-
             <input
               id="wd-group"
               className="form-select"
@@ -58,7 +77,6 @@ export default function Grades() {
         <div className="col offset-sm">
           <span className="mb-3 col offset-sm input-group-text">
             <HiMagnifyingGlass className="me-1" />
-
             <input
               id="wd-group"
               className="form-select"
@@ -82,21 +100,18 @@ export default function Grades() {
           <thead>
             <tr>
               <th>Student Name</th>
-              {assignments.map(assignment => (
+              {assignmentNames.map(assignment => (
                 <th key={assignment}>{assignment} <br /> Out of 100%</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {enrolledUserDetails.map(user => (
-              <tr key={user._id}>
-                <td>{user.firstName} {user.lastName}</td>
-                {assignments.map(assignment => {
-                  const grade = courseGrades.find(grade => grade.student === user._id && grade.assignment === assignment);
-                  return (
-                    <td key={assignment}>{grade ? grade.grade : 'N/A'}%</td>
-                  );
-                })}
+            {students.map(student => (
+              <tr key={student.studentID}>
+                <td>{student.studentName}</td>
+                {student.studentGrades.map(grade => (
+                  <td >{grade.grade}</td>
+                ))}
               </tr>
             ))}
           </tbody>
