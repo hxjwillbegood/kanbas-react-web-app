@@ -2,6 +2,7 @@ import { FaPlus } from "react-icons/fa6";
 import GreenCheckmark from "./GreenCheckmark";
 import { RiProhibitedLine } from "react-icons/ri";
 import ModuleEditor from "./ModuleEditor";
+
 export default function ModulesControls({ moduleName, setModuleName, addModule }:
   { moduleName: string; setModuleName: (title: string) => void; addModule: () => void; }) {
   return (

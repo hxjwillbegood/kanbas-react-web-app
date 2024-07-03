@@ -10,6 +10,7 @@ import { addModule, editModule, updateModule, deleteModule } from "./reducer";
 export default function Modules() {
   const { cid } = useParams();
   const [moduleName, setModuleName] = useState("");
+  
   const modules = useSelector((state: any) => state.modulesReducer.modules);
   const dispatch = useDispatch();
 
