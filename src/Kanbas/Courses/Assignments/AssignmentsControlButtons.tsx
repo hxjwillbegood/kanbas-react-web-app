@@ -1,17 +1,14 @@
-import {IoEllipsisVertical} from "react-icons/io5";
-import {FaPlus} from "react-icons/fa6";
+import { IoEllipsisVertical } from "react-icons/io5";
+import { GoPlus } from "react-icons/go";
 
-export default function AssignmentControlButtons() {
-    return (
-        <div className="float-end">
-            <span className="rounded-pill
-                             border border-1
-                             border-dark
-                             me-2 px-2 py-1">
-                            40% of Total
-                        </span>
-            <FaPlus className="me-1 fs-4"/>
-            <IoEllipsisVertical className="me-1 fs-4"/>
-        </div>
-    )
+export default function AssignmentsControlButtons() {
+  return (
+    <div className="d-flex align-items-center justify-content-end " style={{ marginLeft: 'auto' }}>
+      <span className="wd-rounded-corners-all-around wd-border-black wd-border-solid px-2 me-2 " >
+        40% of Total
+      </span>
+      <GoPlus className="me-2" />
+      <IoEllipsisVertical className="fs-4" />
+    </div>
+  );
 }

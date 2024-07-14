@@ -1,38 +1,36 @@
+import { HiMagnifyingGlass } from "react-icons/hi2";
 import {FaPlus} from "react-icons/fa6";
-import {HiMagnifyingGlass} from "react-icons/hi2";
-import {useParams} from "react-router";
+import { useParams,Link} from "react-router-dom";
 
-export default function AssignmentControls() {
-    const {cid} = useParams();
-
-    return (
-        <div id="wd-assignment-controls" className="d-flex justify-content-between">
-            <div className="wd-search-assignment input-group me-1">
+export default function AssignmentControl(){
+    const { cid } = useParams();
+    return(
+        <div id="wd-assignment-controls" style={{ display: "flex" }}>
+            <div className="wd-search-assignment input-group me-1" style={{ width: "50%" }}>
                 <span className="input-group-text">
                     <HiMagnifyingGlass/>
                 </span>
-                <input id="input-group-text"
+                <input 
                        className="form-control"
-                       type="text" placeholder="Search..."/>
+                       type="text" 
+                       placeholder="Search..."/>
             </div>
 
-            <div className="input-group me-1 justify-content-end">
-                <div>
-                    <button id="wd-add-assignment-group"
-                            className="btn btn-lg btn-secondary me-1">
-                        <FaPlus className="position-relative me-1" style={{bottom: "1px"}}/>
-                        Group
-                    </button>
-                </div>
-                <div>
-
-                    <a id="wd-add-assignment"
-                       className="btn btn-lg btn-danger me-1" href={`#/Kanbas/Courses/${cid}/Assignments/new`}>
-                        <FaPlus className="position-relative me-1" style={{bottom: "1px"}}/>
-                        Assignment
-                    </a>
-                </div>
+            <div className="d-line me-1" style={{ marginLeft: "auto" }} >
+                <button id="wd-collepse-all" className="btn btn-lg btn-secondary">
+                <FaPlus className="position-relative me-1" style={{ bottom: "1px" }}/>
+                Group
+                </button>
             </div>
+
+            <div className="d-line me-1" >
+                <Link id="wd-add-assignment"
+                    className="btn btn-lg btn-danger me-1"  key={`${cid}/new`} to={`${cid}/new`}>
+                    <FaPlus className="position-relative me-1" style={{bottom: "1px"}}/>
+                    Assignment
+                </Link>
+            </div>
+
 
         </div>
     );
