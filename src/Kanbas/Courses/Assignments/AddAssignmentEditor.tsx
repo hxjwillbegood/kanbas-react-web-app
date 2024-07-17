@@ -1,10 +1,10 @@
 import { MdOutlineCalendarMonth } from "react-icons/md";
-import * as db from "../../Database";
 import { useParams, Link } from "react-router-dom";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addAssignment } from "./reducer";
 import { title } from "process";
+import * as client from "./client";
 
 
 export default function AssignmentEditor() {
@@ -22,13 +22,19 @@ export default function AssignmentEditor() {
     available: "June 1 at 12:00pm", 
   });
 
-  const handleSave = () => {
+  const handleSave = async () => {
     const newAssignment = {
-        _id: new Date().getTime().toString(),
-        ...assignmentData,
-        course: cid
+      ...assignmentData,
+      course: cid,
+      _id: new Date().getTime().toString(),
     };
-    dispatch(addAssignment(newAssignment));
+
+    try {
+      const createdAssignment = await client.createAssignment(cid as string, newAssignment);
+      dispatch(addAssignment(createdAssignment));
+    } catch (error) {
+      console.error("Error creating assignment:", error);
+    }
   };
 
   const handleInputChange = (e: any) => {

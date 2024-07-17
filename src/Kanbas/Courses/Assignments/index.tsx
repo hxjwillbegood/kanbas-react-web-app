@@ -3,16 +3,17 @@ import { BsGripVertical, BsPencilSquare } from "react-icons/bs";
 import { GoTriangleDown } from "react-icons/go";
 import  AssignmentsControlButtons from "./AssignmentsControlButtons";
 import LessonControlButtons from "../Modules/LessonControlButtons"; 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaTrashAlt } from "react-icons/fa";
 import * as db from "../../Database";
 import { useParams } from "react-router";
-import { deleteAssignment } from "./reducer";
+import { setAssignments, addAssignment, deleteAssignment, updateAssignment } from "./reducer";
 import DeleteAssignmentControl from "./DeleteAssignmenControl";
+import * as client from "./client";
 
 export default function Assignments() {
-  const { cid, id } = useParams();
+  const { cid} = useParams();
   
   const { assignments } = useSelector((state: any) => state.assignmentsReducer);
   const dispatch = useDispatch();
@@ -25,19 +26,32 @@ export default function Assignments() {
       setShowConfirmDialog(true);
   };
 
-  const handleConfirmDelete = () => {
-      if (assignmentToDelete) {
-          dispatch(deleteAssignment(assignmentToDelete));
-      }
-      setShowConfirmDialog(false);
-      setAssignmentToDelete(null);
-  };
-
   const handleCancelDelete = () => {
-      setShowConfirmDialog(false);
-      setAssignmentToDelete(null);
+    setShowConfirmDialog(false);
+    setAssignmentToDelete(null);
   };
 
+  const handleConfirmDelete = async () => {
+    if (assignmentToDelete) {
+      try {
+        await client.deleteAssignment(assignmentToDelete);
+        dispatch(deleteAssignment(assignmentToDelete));
+      } catch (error) {
+        console.error("Error deleting assignment:", error);
+      }
+    }
+    setShowConfirmDialog(false);
+    setAssignmentToDelete(null);
+  };
+
+  const fetchAssignments = async () => {
+    const assignments = await client.findAssignmentsForCourse(cid as string);
+    dispatch(setAssignments(assignments));
+  };
+
+  useEffect(() => {
+    fetchAssignments();
+  }, [fetchAssignments]);
 
   return (
     <div id="wd-assignments">
@@ -76,7 +90,6 @@ export default function Assignments() {
                   <div style={{ marginLeft: "auto" }}>
                     <LessonControlButtons />
                   
-                 
                     <DeleteAssignmentControl onDeleteClick={() => handleDeleteClick(assignment._id)}/>
                   </div>
                 </div>

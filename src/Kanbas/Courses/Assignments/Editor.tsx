@@ -1,62 +1,67 @@
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import * as db from "../../Database";
 import { useParams, Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { updateAssignment } from "./reducer";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import * as client from "./client";
 
 export default function Editor() {
   const { cid, id } = useParams();
-  const dispatch = useDispatch();
-  const assignment = db.assignments.find(
-    (assignment) => assignment.course === cid && assignment._id === id
+  const assignments = useSelector(
+    (state: any) => state.assignmentsReducer.assignments
   );
+
+  const existingAssignment = assignments.find(
+    (a: any) => a._id === id && a.course === cid
+  );
+
+  const dispatch = useDispatch();
+  // const assignment = db.assignments.find(
+  //   (assignment) => assignment.course === cid && assignment._id === id
+  // );
 
   const [assignmentData, setAssignmentData] = useState(
-    assignment
-      ? {
-          title: assignment.title,
-          description: assignment.description,
-          points: assignment.points,
-          available_from_date: assignment.available_from_date,
-          due_date: assignment.due_date,
-          until_date: assignment.until_date,
-          due: assignment.due,
-          available: assignment.available,
-        }
-      : {
-          title: '',
-          description: '',
-          points: '',
-          available_from_date: '',
-          due_date: '',
-          until_date: '',
-          due: '',
-          available: '',
+    existingAssignment || {
+        _id:id,
+        title: "",
+        course: cid,
+        description: "",
+        points: 100,
+        available_from_date: "Jan 1",
+        due_date: "Jan 7",
+        until_date: "Jan 8",
+        due: "Jan 7",
+        available: "Jan 1",
         }
   );
 
-  if (!assignment) {
-    return <div>No assignment found for this course.</div>;
-  }
 
-  const handleSave = () => {
-    dispatch(updateAssignment({
-        ...db.assignments.find((assignment: any) => assignment._id === id),
-        ...assignmentData
-    }));
-};
+  const handleSave = async () => {
+    const existingAssignment = db.assignments.find((assignment: any) => assignment._id === id);
+    const updatedAssignment = {
+      ...existingAssignment,
+      ...assignmentData,
+    };
+
+    try {
+      const status = await client.updateAssignment(updatedAssignment);
+      if (status) {
+        dispatch(updateAssignment(updatedAssignment));
+      }
+    } catch (error) {
+      console.error("Error updating assignment:", error);
+    }
+   };
+
+  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setAssignmentData({ ...assignmentData, [name]: value });
   };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   // Save the updated assignment data to the database or perform other actions
-  //   console.log('Saved assignment data:', assignmentData);
-  // };
+
 
   return (
     <form className="wd-assignments-editor">
@@ -71,7 +76,9 @@ export default function Editor() {
             id="wd-assignment-name"
             name="title"
             value={assignmentData.title}
-            onChange={handleInputChange}
+            onChange={(e) =>
+              setAssignmentData({ ...existingAssignment, title: e.target.value })
+            }
           />
         </div>
       </div>

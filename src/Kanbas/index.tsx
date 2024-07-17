@@ -3,42 +3,59 @@ import {Navigate, Route, Routes} from "react-router";
 import Courses from "./Courses";
 import "./styles.css";
 import KanbasNavigation from "./Navigation";
-import {useState} from "react";
-import * as db from "./Database";
+import {useState, useEffect} from "react";
+// import * as db from "./Database";
 import store from "./store";
 import {Provider} from "react-redux";
 import AssignmentEditor from "./Courses/Assignments/Editor";
+import * as client from "./Courses/client";
 
 export default function Kanbas() {
 
-    const [courses, setCourses] = useState(db.courses);
+    const [courses, setCourses] = useState<any[]>([]);
+    const fetchCourses = async () => {
+      const courses = await client.fetchAllCourses();
+      setCourses(courses);
+    };
+
+    const addNewCourse = async () => {
+        const newCourse = await client.createCourse(course);
+        setCourses([ ...courses, newCourse ]);
+    };
+
+    const deleteCourse = async (courseId: string) => {
+        await client.deleteCourse(courseId);
+        setCourses(courses.filter(
+          (c) => c._id !== courseId));
+    };
+
+    const updateCourse = async () => {
+        await client.updateCourse(course);
+        setCourses(
+          courses.map((c) => {
+            if (c._id === course._id) {
+              return course;
+            } else {
+              return c;
+            }
+          })
+        );
+    };
+    
+    // function deleteCourse(_id: string) {
+    //     const newCourses = courses.filter(course => course._id !== _id);
+    //     setCourses(newCourses);
+    // }
+
+    useEffect(() => {
+      fetchCourses();
+    }, []);
+  
     const [course, setCourse] = useState<any>({
         _id: "0", name: "New Course", number: "New Number",
         startDate: "2023-09-10", endDate: "2023-12-15",
         image: "reactjs.png", description: "New Description"
     });
-
-    const addNewCourse = () => {
-        const newCourse = {...course, _id: new Date().getTime().toString()};
-        setCourses([...courses, {...course, ...newCourse}]);
-    };
-
-    function deleteCourse(_id: string) {
-        const newCourses = courses.filter(course => course._id !== _id);
-        setCourses(newCourses);
-    }
-
-    const updateCourse = () => {
-        setCourses(
-            courses.map((c) => {
-                if (c._id === course._id) {
-                    return course;
-                } else {
-                    return c;
-                }
-            })
-        );
-    };
 
     return (
         <Provider store={store}>
