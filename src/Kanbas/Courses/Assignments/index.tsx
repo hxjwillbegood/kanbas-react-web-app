@@ -5,10 +5,8 @@ import  AssignmentsControlButtons from "./AssignmentsControlButtons";
 import LessonControlButtons from "../Modules/LessonControlButtons"; 
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { FaTrashAlt } from "react-icons/fa";
-import * as db from "../../Database";
 import { useParams } from "react-router";
-import { setAssignments, addAssignment, deleteAssignment, updateAssignment } from "./reducer";
+import { setAssignments, deleteAssignment,} from "./reducer";
 import DeleteAssignmentControl from "./DeleteAssignmenControl";
 import * as client from "./client";
 
@@ -44,14 +42,14 @@ export default function Assignments() {
     setAssignmentToDelete(null);
   };
 
-  const fetchAssignments = async () => {
-    const assignments = await client.findAssignmentsForCourse(cid as string);
-    dispatch(setAssignments(assignments));
-  };
-
   useEffect(() => {
+    const fetchAssignments = async () => {
+      const assignments = await client.findAssignmentsForCourse(cid as string);
+      dispatch(setAssignments(assignments));
+    };
+
     fetchAssignments();
-  }, [fetchAssignments]);
+  }, [cid, dispatch]);
 
   return (
     <div id="wd-assignments">
