@@ -1,7 +1,6 @@
-import { MdOutlineCalendarMonth } from "react-icons/md";
 import * as db from "../../Database";
 import { useParams, Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { updateAssignment } from "./reducer";
 import { useSelector, useDispatch } from "react-redux";
 import * as client from "./client";
@@ -17,9 +16,6 @@ export default function Editor() {
   );
 
   const dispatch = useDispatch();
-  // const assignment = db.assignments.find(
-  //   (assignment) => assignment.course === cid && assignment._id === id
-  // );
 
   const [assignmentData, setAssignmentData] = useState(
     existingAssignment || {
@@ -35,7 +31,6 @@ export default function Editor() {
         available: "Jan 1",
         }
   );
-
 
   const handleSave = async () => {
     const existingAssignment = db.assignments.find((assignment: any) => assignment._id === id);
