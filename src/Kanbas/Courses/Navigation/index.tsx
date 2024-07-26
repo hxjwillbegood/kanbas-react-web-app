@@ -12,7 +12,8 @@ export default function CoursesNavigation() {
     { label: "Zoom", path: `/Kanbas/Courses/${cid}/Zoom` },
     { label: "Assignments", path: `/Kanbas/Courses/${cid}/Assignments` },
     { label: "Quizzes", path: `/Kanbas/Courses/${cid}/Quizzes` },
-    { label: "Grades", path: `/Kanbas/Courses/${cid}/Grades` }
+    { label: "Grades", path: `/Kanbas/Courses/${cid}/Grades` },
+    { label: "People", path: `/Kanbas/Courses/${cid}/People` },
   ];
 
   return (

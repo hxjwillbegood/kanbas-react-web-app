@@ -1,6 +1,5 @@
 import React from 'react';
-import {IoEllipsisVertical} from "react-icons/io5";
-import {FaCheckCircle, FaCircle, FaTrash} from "react-icons/fa";
+import {FaTrash} from "react-icons/fa";
 
 interface HomeworkControlButtonsProps {
     onDeleteClick: () => void;

@@ -1,8 +1,7 @@
 import { FaFileImport } from "react-icons/fa";
 import { FaFileExport } from "react-icons/fa";
 import {FaGear} from "react-icons/fa6";
-import { IoSettingsSharp } from "react-icons/io5";
-import { IoIosArrowDown } from "react-icons/io";
+
 
 export function GradesControlButtons() {
     return (

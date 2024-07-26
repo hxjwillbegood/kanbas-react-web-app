@@ -5,8 +5,7 @@ const MODULES_API = `${REMOTE_SERVER}/api/modules`;
 
 //update modules
 export const updateModule = async (module: any) => {
-  const response = await axios.
-    put(`${MODULES_API}/${module._id}`, module);
+  const response = await axios.put(`${MODULES_API}/${module._id}`, module);
   return response.data;
 };
 

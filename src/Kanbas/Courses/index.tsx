@@ -7,10 +7,11 @@ import AddAssignmentEditor from "./Assignments/AddAssignmentEditor";
 import {Navigate, Route, Routes, useLocation, useParams} from "react-router";
 import {FaAlignJustify} from "react-icons/fa";
 import Grades from "./Grades";
+import PeopleTable from "./People/Table";
 
 export default function Courses({courses}: { courses: any[] }) {
 
-    const {cid,aid} = useParams();
+    const {cid} = useParams();
 
     const course = courses.find((course) => course._id === cid);
     const {pathname} = useLocation();
@@ -30,13 +31,14 @@ export default function Courses({courses}: { courses: any[] }) {
                 <div className="flex-fill">
                     <Routes>
                         <Route path="/" element={<Navigate to="Home"/>}/>
-                        <Route path="Home" element={<Home/>}/>
-                        <Route path="Modules" element={<Modules/>}/>
-                        <Route path="Assignments" element={<Assignments/>}/>
-                        <Route path="Grades" element={<Grades/>}/>
-                        <Route path="Assignments/:id" element={<AssignmentEditor />} />
+                        <Route path="/Home" element={<Home/>}/>
+                        <Route path="/Modules" element={<Modules/>}/>
+                        <Route path="/Assignments" element={<Assignments/>}/>
+                        <Route path="/Grades" element={<Grades/>}/>
+                        <Route path="/Assignments/:id" element={<AssignmentEditor />} />
                         <Route path="/Assignments/:cid/:id" element={<AddAssignmentEditor />} />
-
+                        <Route path="/People" element={<PeopleTable />} />
+                        <Route path="/People/:uid" element={<PeopleTable />} />
                     </Routes>
                 </div>
             </div>
