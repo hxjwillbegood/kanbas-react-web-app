@@ -33,8 +33,8 @@ export default function Dashboard(
       <div id="wd-dashboard-courses" className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">
           {courses.map((course) => (
-            <div key={course._id} className="wd-dashboard-course col" style={{ width: "300px" }}>
-              <Link to={`/Kanbas/Courses/${course._id}/Home`} className="text-decoration-none">
+            <div key={course.number} className="wd-dashboard-course col" style={{ width: "300px" }}>
+              <Link to={`/Kanbas/Courses/${course.number}/Home`} className="text-decoration-none">
                 <div className="card rounded-3 overflow-hidden">
                   <img src={`/images/${course.img}`} height={160} />
                   <div className="card-body">
@@ -44,7 +44,7 @@ export default function Dashboard(
                     <p className="wd-dashboard-course-title card-text" style={{ maxHeight: 53, overflow: "hidden" }}>
                       {course.description}
                     </p>
-                    <Link to={`/Kanbas/Courses/${course._id}/Home`} className="btn btn-primary">Go</Link>
+                    <Link to={`/Kanbas/Courses/${course.number}/Home`} className="btn btn-primary">Go</Link>
                     <button id="wd-edit-course-click" onClick={(event) => {
                         event.preventDefault();
                         setCourse(course);
@@ -55,7 +55,7 @@ export default function Dashboard(
 
                     <button onClick={(event) => {
                       event.preventDefault();
-                      deleteCourse(course._id);
+                      deleteCourse(course.number);
                     }} className="btn btn-danger float-end"
                     id="wd-delete-course-click">
                     Delete
