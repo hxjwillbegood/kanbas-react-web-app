@@ -22,6 +22,11 @@ export const updateCourse = async (course: any) => {
     const response = await axios.put(`${COURSES_API}/${course._id}`, course);
     return response.data;
 };
+
+export const findExistingCourse = async (course: any) => {
+    const response = await axios.get(`/api/courses/${course.number}`);
+    return response.data;
+};
   
   
   

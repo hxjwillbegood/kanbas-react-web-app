@@ -40,7 +40,20 @@ export const signin = async (credentials: any) => {
     const response = await axios.post( `${USERS_API}/signin`, credentials );
     return response.data;
 };
+
+export const updateUserCourse = async (userId: string, courseNumber: string) => {
+    try {
+      const userIdString = userId.toString();
+      const response = await axios.put(`${USERS_API}/${userIdString}/courses`, { courseNumber });
+      return response.data;
+    } catch (error) {
+      console.error("Error updating user course:", error);
+      throw error;
+    }
+  };
   
+
+
   
   
   

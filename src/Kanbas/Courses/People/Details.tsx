@@ -110,7 +110,9 @@ export default function PeopleDetails({ fetchUsers }:
                 )}
 
                 {user && editing && (
-                    <select defaultValue={user.role}  onChange={(e) => setRole(e.target.value)} className="form-select w-50">
+                    <select defaultValue={user.role}  
+                    onChange={(e) => setRole(e.target.value)} 
+                    className="form-select w-50">
                         <option value="STUDENT">STUDENT</option>
                         <option value="TA">TA</option>
                         <option value="FACULTY">FACULTY</option>

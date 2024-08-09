@@ -8,6 +8,11 @@ import {Navigate, Route, Routes, useLocation, useParams} from "react-router";
 import {FaAlignJustify} from "react-icons/fa";
 import Grades from "./Grades";
 import PeopleTable from "./People/Table";
+import Quizzes from "./Quiz/index";
+import QuizDetails from "./Quiz/QuizDetails";
+import QuizDetailsEditor from "./Quiz/QuizDetailsEditor";
+import QuizQuestionEditor from "./Quiz/QuizQuestionEditor";
+import QuizQuestionDetailsEditor from "./Quiz/QuizQuestionDetailsEditor";
 
 export default function Courses({courses}: { courses: any[] }) {
 
@@ -17,6 +22,7 @@ export default function Courses({courses}: { courses: any[] }) {
     const {pathname} = useLocation();
 
     return (
+        // <Provider store={store}>
         <div id="wd-courses">
             <h2 className="text-danger">
                 <FaAlignJustify className="me-4 fs-4 mb-1"/>
@@ -39,9 +45,15 @@ export default function Courses({courses}: { courses: any[] }) {
                         <Route path="/Assignments/:cid/:id" element={<AddAssignmentEditor />} />
                         <Route path="/People" element={<PeopleTable />} />
                         <Route path="/People/:uid" element={<PeopleTable />} />
+                        <Route path="/Quizzes/*" element={<Quizzes />} />
+                        <Route path="/Quizzes/QuizNumber/*" element={<QuizDetails />} />
+                        <Route path="/Quizzes/QuizNumber/QuizDetailsEditor/*" element={<QuizDetailsEditor />} />
+                        <Route path="/Quizzes/QuizNumber/QuizQuestionEditor/*" element={<QuizQuestionEditor />} />
+                        <Route path="/Quizzes/QuizNumber/QuizQuestionEditor/QuizQuestionDetailsEditor/*" element={<QuizQuestionDetailsEditor />} />
                     </Routes>
                 </div>
             </div>
         </div>
+        
     );
 }

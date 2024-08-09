@@ -1,0 +1,8 @@
+.button-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
+}
+
+.button-container button {
+    margin-right: 10px; /* Adds some space between the buttons */
+}
