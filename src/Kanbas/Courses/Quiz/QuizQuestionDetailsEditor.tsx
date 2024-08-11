@@ -1,14 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setCurrentQuestions, addQuestion, updateQuestion, deleteQuestion } from "./quizReducer";
 
 export default function QuizQuestionDetailsEditor() {
   const [title, setTitle] = useState('');
   const [points, setPoints] = useState(0);
   const [question, setQuestion] = useState('');
-  const [questionType, setQuestionType] = useState('Multiple Choice');
+  const [questionType, setQuestionType] = useState('');
   const [choices, setChoices] = useState([{ text: '', correct: false }]);
   const [correctAnswer, setCorrectAnswer] = useState<boolean | null>(null);
   const [fillInTheBlankAnswers, setFillInTheBlankAnswers] = useState(['']);
+  const dispatch = useDispatch();
+  const { cid, id } = useParams();
+
+  const quizzes = useSelector((state: any) => state.quizReducer.quizzes);
+
+  const currentQuiz = quizzes.find(
+    (a: any) => a.quizNumber === id
+  );
+
+  const quizQuestions = currentQuiz.quizQuestion;
+
+  const currentQuestion = quizQuestions.find(
+    (a: any) => a.questionNumber === cid
+  );
+
+  const courseId = currentQuiz.course;
+
+  // Initialize the state with the current question data
+  useEffect(() => {
+    if (currentQuestion) {
+      setTitle(currentQuestion.questionTitle);
+      setPoints(currentQuestion.questionPoints);
+      setQuestion(currentQuestion.questionDescription);
+      setQuestionType(currentQuestion.questionType);
+      if (currentQuestion.questionType === 'Multiple Choice') {
+        setChoices(currentQuestion.choices || [{ text: '', correct: false }]);
+      } else if (currentQuestion.questionType === 'True/False') {
+        setCorrectAnswer(currentQuestion.correctAnswer || null);
+      } else if (currentQuestion.questionType === 'Fill in the blank') {
+        setFillInTheBlankAnswers(currentQuestion.fillInTheBlankAnswers || ['']);
+      }
+    }
+  }, [currentQuestion]);
 
   const handleChoiceChange = (index: number, value: string) => {
     const newChoices = [...choices];
@@ -37,10 +72,6 @@ export default function QuizQuestionDetailsEditor() {
     // Add your save logic here
   };
 
-//   const handleCancel = () => {
-//     // Navigate to the previous screen
-//   };
-
   const handleFillInTheBlankChange = (index: number, value: string) => {
     const newAnswers = [...fillInTheBlankAnswers];
     newAnswers[index] = value;
@@ -66,7 +97,7 @@ export default function QuizQuestionDetailsEditor() {
           style={{ flex: 1, padding: '10px', marginRight: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
         />
         <select
-          defaultValue={"Multiple Choice"}  
+          value={questionType} 
           onChange={(e) => setQuestionType(e.target.value)} 
           className="form-select w-50"
           style={{ flex: 1, padding: '10px', marginRight: '10px', border: '1px solid #ccc', borderRadius: '5px' }}
@@ -90,7 +121,7 @@ export default function QuizQuestionDetailsEditor() {
         <textarea
           id="question"
           name="question"
-          value={question}
+          value={question} 
           onChange={(e) => setQuestion(e.target.value)}
           style={{ width: '100%', padding: '10px', boxSizing: 'border-box', height: '100px', border: '1px solid #ccc', borderRadius: '5px' }}
         />
@@ -177,11 +208,7 @@ export default function QuizQuestionDetailsEditor() {
           ))}
           <button
             onClick={addFillInTheBlankAnswer}
-            
-            style={{ padding: '10px', cursor: 'pointer',
-                 backgroundColor: '#007bff', color: 'white', 
-                 border: 'none', borderRadius: '5px', 
-                 display: 'block', margin: '10px 0' }}
+            style={{ padding: '10px', cursor: 'pointer', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '5px', display: 'block', margin: '10px 0' }}
           >
             Add Another Correct Answer
           </button>
@@ -189,17 +216,16 @@ export default function QuizQuestionDetailsEditor() {
       )}
 
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px' }}>
-        {/* 去http://localhost:3000/#/Kanbas/Courses/1234/Quizzes/QuizNumber/QuizQuestionEditor */}
-        <Link to={`/Kanbas/Courses/1234/Quizzes/QuizNumber/QuizQuestionEditor`} >
-            <button style={{ padding: '10px 20px', marginRight: '10px', cursor: 'pointer', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '5px' }}> 
-                Cancel
-            </button>
-        </Link> 
+        <Link to={`/Kanbas/Courses/${courseId}/Quizzes/${id}/QuizQuestionEditor`} >
+          <button style={{ padding: '10px 20px', marginRight: '10px', cursor: 'pointer', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '5px' }}>
+            Cancel
+          </button>
+        </Link>
 
         <Link to={`/Kanbas/Courses/1234/Quizzes/QuizNumber/QuizQuestionEditor`}>
-            <button  onClick={handleSave} style={{ padding: '10px 20px', cursor: 'pointer', backgroundColor: '#28a745', color: 'white', border: 'none', borderRadius: '5px' }}>
-                Save/Update Question
-            </button>
+          <button onClick={handleSave} style={{ padding: '10px 20px', cursor: 'pointer', backgroundColor: '#28a745', color: 'white', border: 'none', borderRadius: '5px' }}>
+            Save/Update Question
+          </button>
         </Link>
       </div>
     </div>

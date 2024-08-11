@@ -37,7 +37,7 @@ export default function Editor() {
     const updatedAssignment = {
       ...existingAssignment,
       ...assignmentData,
-    };
+  };
 
     try {
       const status = await client.updateAssignment(updatedAssignment);

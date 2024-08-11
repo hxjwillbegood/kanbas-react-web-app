@@ -1,28 +1,46 @@
 import { HiOutlinePlus } from "react-icons/hi";
 import { useParams, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import { Console } from "console";
 export default function QuizQuestionEditor(){
+    const { cid, id } = useParams();
+ 
+
     const handleAddQuestion= () => {
-        alert('Quiz details saved!');
+        // alert('Quiz details saved!');
         // Add your save logic here
       };
-
-    // const handleCancel = () => {
-    // // Navigate to the Quiz List screen
-    // };
+    
+    const [edit, setEdit] = useState(false);
 
     const handleSave = () => {
         alert('Quiz details saved!');
         // Add your save logic here
     };
 
+    // const handleEditClick = () => {
+    //     setEdit(true);
+    //   };
+     
+    const quizzes = useSelector((state: any) => state.quizReducer.quizzes);
+    
+
+    const currentQuiz = quizzes.find(
+      (a: any) => a.quizNumber === id && a.course === cid
+    );
+
+    const questions = currentQuiz.quizQuestion;
+    console.log("question:",questions);
+
     return (
         <div style={{ maxWidth: '900px', margin: '20px auto', padding: '20px', border: '1px solid #ccc' , borderRadius: '10px' }}>
             <div style={{ display: 'flex', borderBottom: '1px solid #ccc', marginBottom: '20px' }}>
-            <a href="#/Kanbas/Courses/1234/Quizzes/QuizNumber/QuizDetailsEditor"> 
+            <Link to={`/Kanbas/Courses/${cid}/Quizzes/${currentQuiz?.quizNumber}/QuizDetailsEditor`}> 
                 <button style={{ flex: 1, padding: '10px', cursor: 'pointer', background: 'none', border: 'none', borderBottom: '2px solid  transparent'  }}>
                     Details
                 </button>
-            </a>
+            </Link>
              
             <button style={{ flex: 1, padding: '10px', cursor: 'pointer', background: 'none', border: 'none', borderBottom: '2px solid #007bff ' , fontWeight: 'bold'}}>
                 Questions
@@ -40,30 +58,34 @@ export default function QuizQuestionEditor(){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td style={{ border: '1px solid #dddddd', textAlign: 'left', padding: '8px' }}>Q1</td>
-                        <td style={{ border: '1px solid #dddddd', textAlign: 'left', padding: '8px' }}>Multiple Choices</td>
-                        <td style={{ border: '1px solid #dddddd', textAlign: 'left', padding: '8px' }}>100 pts</td>
-                        <td style={{ border: '1px solid #dddddd', textAlign: 'left', padding: '8px' }}> 
-                            <a href="#/Kanbas/Courses/1234/Quizzes/QuizNumber/QuizQuestionEditor/QuizQuestionDetailsEditor"> 
-                                <button
-                                id="wd-edit-course-click"
-                                className="btn  btn-warning"
-                                >
-                                Edit
-                            </button>
-                            </a>
-                        </td>
-                    </tr>
-
+                    {questions.map((question: any, index: number) => (
+                        <tr key={index}>
+                            <td style={{ border: '1px solid #dddddd', textAlign: 'left', padding: '8px' }}>
+                                {question.questionTitle}
+                            </td>
+                            <td style={{ border: '1px solid #dddddd', textAlign: 'left', padding: '8px' }}>
+                                {question.questionType}
+                            </td>
+                            <td style={{ border: '1px solid #dddddd', textAlign: 'left', padding: '8px' }}>
+                                {question.questionPoints} pts
+                            </td>
+                            <td style={{ border: '1px solid #dddddd', textAlign: 'left', padding: '8px' }}>
+                                <Link to={`/Kanbas/Courses/${cid}/Quizzes/${currentQuiz?.quizNumber}/${question.questionNumber}`}> 
+                                    <button 
+                                    className="btn btn-warning"
+                                    // onClick = {handleEditClick}
+                                    >
+                                        Edit
+                                    </button>
+                                </Link>
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
-
             </table>
-
-            {/* 这里加quiz map */}
-              
+                    
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px', marginTop: '30px' }}>
-                <Link to={`/Kanbas/Courses/1234/Quizzes/QuizNumber/QuizQuestionEditor/QuizQuestionDetailsEditor`}>
+                <Link to={`/Kanbas/Courses/${cid}/Quizzes/${id}/QuizDetailsEditor`}> 
                     <button onClick={handleAddQuestion} 
                     className= "btn btn-secondary center" 
                     style={{   marginLeft: '10px', cursor: 'pointer' }}>
@@ -73,13 +95,20 @@ export default function QuizQuestionEditor(){
                     </button>
                 </Link>
             </div>
+
+
+            
             <hr/>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-                <Link to={`/Kanbas/Courses/1234/Quizzes  `}  className= "btn btn-secondary" style={{   marginLeft: '10px', cursor: 'pointer' }}>Cancel</Link>
+                <Link to={`/Kanbas/Courses/${cid}/Quizzes/${id}   `}  className= "btn btn-secondary" style={{   marginLeft: '10px', cursor: 'pointer' }}>Cancel</Link>
                 <button onClick={handleSave} className= "btn btn-danger" style={{   marginLeft: '10px', cursor: 'pointer' }}>Save</button>
             </div>
 
         </div>
+
+
+
+
 
     );
 

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useParams, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import * as client from "./client";
+import { updateQuiz } from "./reducer";
 
-export default function QuizDetailsEditor(){
-
-
+export default function QuizDetailsEditor() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [quizType, setQuizType] = useState('graded-quiz');
@@ -11,7 +12,8 @@ export default function QuizDetailsEditor(){
   const [shuffleAnswers, setShuffleAnswers] = useState(true);
   const [timeLimit, setTimeLimit] = useState(false);
   const [timeLimitMinutes, setTimeLimitMinutes] = useState(20);
-  const [multipleAttempts, setMultipleAttempts] = useState(false);
+  const [multipleTimes, setMultipleTimes] = useState(false);
+  const [multipleAttempts, setMultipleAttempts] = useState(1);
   const [showCorrectAnswers, setShowCorrectAnswers] = useState(false);
   const [accessCode, setAccessCode] = useState('');
   const [oneQuestionAtATime, setOneQuestionAtATime] = useState(true);
@@ -21,18 +23,75 @@ export default function QuizDetailsEditor(){
   const [availableFrom, setAvailableFrom] = useState('');
   const [availableUntil, setAvailableUntil] = useState('');
 
-  const handleSave = () => {
-    alert('Quiz details saved!');
-    // Add your save logic here
+  const { cid, id } = useParams();
+  const dispatch = useDispatch();
+
+  const quizzes = useSelector((state: any) => state.quizReducer.quizzes);
+
+  const currentQuiz = quizzes.find(
+    (a: any) => a.quizNumber === id && a.course === cid
+  );
+
+  // Initialize the state with current quiz values
+  // Without this, the form will start with empty values even if you're editing an existing quiz.
+  React.useEffect(() => {
+    if (currentQuiz) {
+      setTitle(currentQuiz.quizTitle || '');
+      setDescription(currentQuiz.description || '');
+      setQuizType(currentQuiz.quizType || 'graded-quiz');
+      setAssignmentGroup(currentQuiz.assignmentGroup || 'quizzes');
+      setShuffleAnswers(currentQuiz.shuffle === 'true');
+      setTimeLimit(currentQuiz.timeLimit === 'true');
+      setTimeLimitMinutes(parseInt(currentQuiz.timeLimitMinutes, 10) || 20);
+      setMultipleTimes(currentQuiz.multipleAttempts === 'true');
+      setMultipleAttempts(parseInt(currentQuiz.multipleAttempts, 10) || 1);
+      setShowCorrectAnswers(currentQuiz.showCorrectAnswer === 'true');
+      setAccessCode(currentQuiz.accessCode || '');
+      setOneQuestionAtATime(currentQuiz.oneQuestionAtATime === 'true');
+      setWebcamRequired(currentQuiz.webRequired === 'true');
+      setLockQuestionsAfterAnswering(currentQuiz.lockQuestion === 'true');
+      setDueDate(currentQuiz.due_date || '');
+      setAvailableFrom(currentQuiz.available_from_date || '');
+      setAvailableUntil(currentQuiz.until_date || '');
+    }
+  }, [currentQuiz]);
+
+  const handleSave = async () => {
+    const updatedQuiz = {
+      ...currentQuiz,
+      quizTitle: title,
+      description: description,
+      quizType: quizType,
+      assignmentGroup: assignmentGroup,
+      shuffle: shuffleAnswers.toString(),
+      timeLimit: timeLimit.toString(),
+      timeLimitMinutes: timeLimitMinutes.toString(),
+      multipleAttempts: multipleTimes.toString(),
+      showCorrectAnswer: showCorrectAnswers.toString(),
+      accessCode: accessCode,
+      oneQuestionAtATime: oneQuestionAtATime.toString(),
+      webRequired: webcamRequired.toString(),
+      lockQuestion: lockQuestionsAfterAnswering.toString(),
+      due_date: dueDate,
+      available_from_date: availableFrom,
+      until_date: availableUntil,
+    };
+
+    try {
+      const status = await client.updateQuiz(updatedQuiz);
+      if (status) {
+        dispatch(updateQuiz(updatedQuiz));
+      }
+    } catch (error) {
+      alert('Failed to save quiz details.');
+      console.error('Error updating quiz:', error);
+    }
   };
 
   const handleSaveAndPublish = () => {
+    handleSave();
     alert('Quiz saved and published!');
     // Add your save and publish logic here
-  };
-
-  const handleCancel = () => {
-    // Navigate to the Quiz List screen
   };
 
   return (
@@ -41,11 +100,11 @@ export default function QuizDetailsEditor(){
         <button style={{ flex: 1, padding: '10px', cursor: 'pointer', background: 'none', border: 'none', borderBottom: '2px solid #007bff', fontWeight: 'bold' }}>
           Details
         </button>
-        <a href="#/Kanbas/Courses/1234/Quizzes/QuizNumber/QuizQuestionEditor"> 
+        <Link to={`/Kanbas/Courses/${cid}/Quizzes/${currentQuiz?.quizNumber}/QuizQuestionEditor`}> 
             <button style={{ flex: 1, padding: '10px', cursor: 'pointer', background: 'none', border: 'none', borderBottom: '2px solid transparent' }}>
             Questions
             </button>
-        </a>
+        </Link>
       </div>
 
       <div>
@@ -60,6 +119,7 @@ export default function QuizDetailsEditor(){
             style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
           />
         </div>
+
         <div style={{ marginBottom: '15px' }}>
           <label htmlFor="description">Quiz Instructions</label>
           <textarea
@@ -79,10 +139,10 @@ export default function QuizDetailsEditor(){
             onChange={(e) => setQuizType(e.target.value)}
             style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
           >
-            <option value="graded-quiz">Graded Quiz</option>
-            <option value="practice-quiz">Practice Quiz</option>
-            <option value="graded-survey">Graded Survey</option>
-            <option value="ungraded-survey">Ungraded Survey</option>
+            <option value="Graded Quiz">Graded Quiz</option>
+            <option value="Practice Quiz">Practice Quiz</option>
+            <option value="Graded Survey">Graded Survey</option>
+            <option value="Ungraded Survey">Ungraded Survey</option>
           </select>
         </div>
         <div style={{ marginBottom: '15px' }}>
@@ -94,10 +154,10 @@ export default function QuizDetailsEditor(){
             onChange={(e) => setAssignmentGroup(e.target.value)}
             style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
           >
-            <option value="quizzes">Quizzes</option>
-            <option value="exams">Exams</option>
-            <option value="assignments">Assignments</option>
-            <option value="project">Project</option>
+            <option value="Quizzes">Quizzes</option>
+            <option value="Exams">Exams</option>
+            <option value="Assignments">Assignments</option>
+            <option value="Project">Project</option>
           </select>
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -130,15 +190,25 @@ export default function QuizDetailsEditor(){
               disabled={!timeLimit}
             /> Minutes
           </div>
+
           <div style={{ flex: '1', marginRight: '20px' }}>
             <input
               type="checkbox"
-              id="multiple-attempts"
-              name="multiple-attempts"
-              checked={multipleAttempts}
-              onChange={(e) => setMultipleAttempts(e.target.checked)}
+              id="multiple-times"
+              name="multiple-times"
+              checked={multipleTimes}
+              onChange={(e) => setMultipleTimes(e.target.checked)}
             />
-            <label htmlFor="multiple-attempts" style={{ marginLeft: '10px' }}>Allow Multiple Attempts</label>
+            <label htmlFor="multiple-times" style={{ marginLeft: '10px' }}>Multiple Attempts</label>
+            <input
+              type="number"
+              id="multiple-times"
+              name="multiple-times"
+              value={multipleAttempts}
+              onChange={(e) => setMultipleAttempts(parseInt(e.target.value, 10))}
+              style={{ width: '60px', marginLeft: '10px' }}
+              disabled={!multipleTimes}
+            /> Attempts
           </div>
           <div style={{ flex: '1', marginRight: '20px' }}>
             <input
@@ -228,11 +298,10 @@ export default function QuizDetailsEditor(){
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px' }}>
-        <Link to={`/Kanbas/Courses/1234/Quizzes  `} className= "btn btn-secondary" style={{   marginLeft: '10px', cursor: 'pointer' }}>Cancel</Link>
-        <Link to={`/Kanbas/Courses/1234/Quizzes/QuizNumber `}onClick={handleSave} className= "btn btn-danger" style={{   marginLeft: '10px', cursor: 'pointer' }}>Save</Link>
-        <button onClick={handleSaveAndPublish} className= "btn btn-success" style={{   marginLeft: '10px', cursor: 'pointer' }}>Save and Publish</button>
+        <Link to={`/Kanbas/Courses/${cid}/Quizzes`} className="btn btn-secondary" style={{ marginLeft: '10px', cursor: 'pointer' }}>Cancel</Link>
+        <Link to={`/Kanbas/Courses/${cid}/Quizzes/${id}`} onClick={handleSave} className="btn btn-danger" style={{ marginLeft: '10px', cursor: 'pointer' }}>Save</Link>
+        <button onClick={handleSaveAndPublish} className="btn btn-success" style={{ marginLeft: '10px', cursor: 'pointer' }}>Save and Publish</button>
       </div>
     </div>
   );
-
 }
